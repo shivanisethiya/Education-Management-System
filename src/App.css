@@ -311,10 +311,19 @@ display:none;
 
 
 .courseimg{
-  display: none;
+  position: absolute;
+  left:-70%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-
+.headin{
+  display:none;
+}
+.line{
+  width:150%;
+}
 
 
 }
