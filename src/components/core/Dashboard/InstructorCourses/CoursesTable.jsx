@@ -41,8 +41,8 @@ export default function CoursesTable({ courses, setCourses }) {
 
   return (
     <>
-      <Table className="rounded-xl border border-richblack-800 ">
-        <Thead className="courseimg">
+      <Table className="rounded-xl border border-richblack-800 relative">
+        <Thead className="headin ">
           <Tr className="flex gap-x-10 rounded-t-md border-b border-b-richblack-800 px-6 py-2">
             <Th className="flex-1  text-left text-sm font-medium uppercase text-richblack-100">
               Courses
@@ -58,7 +58,7 @@ export default function CoursesTable({ courses, setCourses }) {
             </Th>
           </Tr>
         </Thead>
-        <Tbody>
+        <Tbody className="courseimg">
           {courses?.length === 0 ? (
             <Tr>
               <Td className="py-10 text-center text-2xl font-medium text-richblack-100">
@@ -70,13 +70,13 @@ export default function CoursesTable({ courses, setCourses }) {
             courses?.map((course) => (
               <Tr
                 key={course._id}
-                className="flex gap-x-10 border-b border-richblack-800 px-6 py-8"
+                className="flex gap-x-10 mb-8 border-b border-richblack-400 px-6 py-8 row"
               >
                 <Td className="flex flex-1 gap-x-4">
                   <img
                     src={course?.thumbnail}
                     alt={course?.courseName}
-                    className="h-[148px] w-[220px] rounded-lg object-cover "
+                    className="h-[148px] w-[220px] rounded-lg "
                   />
                   <div className="flex flex-col justify-between">
                     <p className="text-lg font-semibold text-richblack-5">
@@ -149,6 +149,7 @@ export default function CoursesTable({ courses, setCourses }) {
                     <RiDeleteBin6Line size={20} />
                   </button>
                 </Td>
+                <hr className="h-1 text-white mt-2 sm:hidden w-[150%]"></hr>
               </Tr>
             ))
           )}
