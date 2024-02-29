@@ -49,7 +49,7 @@ exports.isStudent = async (req, res, next) => {
 		if (userDetails.accountType !== "Student") {
 			return res.status(401).json({
 				success: false,
-				message: "This is a Protected Route for Students",
+				message: "This facility is only for Students",
 			});
 		}
 		next();
@@ -86,7 +86,7 @@ exports.isInstructor = async (req, res, next) => {
 		if (userDetails.accountType !== "Instructor") {
 			return res.status(401).json({
 				success: false,
-				message: "This is a Protected Route for Instructor",
+				message: "This facility is only for Instructors",
 			});
 		}
 		next();
