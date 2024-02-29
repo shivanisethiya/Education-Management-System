@@ -34,7 +34,7 @@ export default function EnrolledCourses() {
 
   return (
     <>
-      <div className="text-3xl text-richblack-50">Enrolled Courses</div>
+      <div className="text-3xl text-richblack-50 heading">Enrolled Courses</div>
       {!enrolledCourses ? (
         <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
           <div className="spinner"></div>
@@ -55,13 +55,13 @@ export default function EnrolledCourses() {
           {/* Course Names */}
           {enrolledCourses.map((course, i, arr) => (
             <div
-              className={`flex items-center border border-richblack-700 ${
+              className={`flex flex-wrap items-center border border-richblack-700 ${
                 i === arr.length - 1 ? "rounded-b-lg" : "rounded-none"
               }`}
               key={i}
             >
               <div
-                className="flex w-[45%] cursor-pointer items-center gap-4 px-5 py-3"
+                className="flex flex-wrap w-[45%] cursor-pointer items-center gap-4 px-5 py-3"
                 onClick={() => {
                   navigate(
                     `/view-course/${course?._id}/section/${course.courseContent?.[0]?._id}/sub-section/${course.courseContent?.[0]?.subSection?.[0]?._id}`
@@ -71,7 +71,7 @@ export default function EnrolledCourses() {
                 <img
                   src={course.thumbnail}
                   alt="course_img"
-                  className="h-14 w-14 rounded-lg object-cover"
+                  className="h-14 w-14 rounded-lg object-cover courseimg"
                 />
                 <div className="flex max-w-xs flex-col gap-2">
                   <p className="font-semibold">{course.courseName}</p>

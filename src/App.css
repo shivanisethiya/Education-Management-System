@@ -270,15 +270,16 @@ z-index: 10;
    
     background-color: rgb(202, 196, 196);
   }
- 
-  .logo{
-    margin-top: 50px;
-    margin-left: -20%;
+   .navBar{
+     gap: 5px;
+     font-size: small;
   }
- 
   .heading{
     text-align: center;
     margin-top: 10px;
+  }
+  .courseimg{
+    display: none;
   }
 }
 
