@@ -270,9 +270,15 @@ z-index: 10;
    
     background-color: rgb(202, 196, 196);
   }
-  /* .navBar{
-     gap: 5px;
-     font-size: small;
+ 
+  .logo{
+    margin-top: 50px;
+    margin-left: -20%;
+  }
+ 
+  .heading{
+    text-align: center;
+    margin-top: 10px;
   }
 }
 
