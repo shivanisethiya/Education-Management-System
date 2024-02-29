@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Outlet, useParams } from "react-router-dom"
-
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import CourseReviewModal from "../components/core/ViewCourse/CourseReviewModal"
 import VideoDetailsSidebar from "../components/core/ViewCourse/VideoDetailsSidebar"
 import { getFullDetailsOfCourse } from "../services/operations/courseDetailsAPI"
@@ -17,6 +18,15 @@ export default function ViewCourse() {
   const { token } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
   const [reviewModal, setReviewModal] = useState(false)
+  const [flag, setFlag] = useState(false);
+
+  function openSidebar()
+  {
+    setFlag(!flag);
+  }
+function closeSideBar(){
+  setFlag(false);
+}
 
   useEffect(() => {
     ;(async () => {
@@ -37,11 +47,13 @@ export default function ViewCourse() {
   return (
     <>
       <div className="relative flex min-h-[calc(100vh-3.5rem)]">
-        <VideoDetailsSidebar setReviewModal={setReviewModal} />
+      {flag && <MdKeyboardDoubleArrowLeft    className=" cursor-pointer absolute z-20 top-2 text-white text-5xl" onClick={closeSideBar} />} 
+      {!flag && <MdKeyboardDoubleArrowRight className="text-white cursor-pointer absolute z-20 left-2 text-5xl" onClick={openSidebar} />}
+      {flag &&     <VideoDetailsSidebar setReviewModal={setReviewModal} /> } 
         <div className="h-[calc(100vh-3.5rem)] flex-1 overflow-auto">
           <div className="mx-6">
             <Outlet />
-          </div>
+          </div> 
         </div>
       </div>
       {reviewModal && <CourseReviewModal setReviewModal={setReviewModal} />}
