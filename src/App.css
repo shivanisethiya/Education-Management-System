@@ -271,8 +271,27 @@ z-index: 10;
     background-color: rgb(202, 196, 196);
   }
    .navBar{
-     gap: 5px;
-     font-size: small;
+   
+     font-size: large;
+     display:flex;
+     flex-direction: column;
+     justify-content:center;
+    
+   position: absolute;
+   top:10px;
+   right:20px;
+   width:200px;
+   background-color: #40403e;
+   opacity:0.9 ;
+   color :black;
+     z-index: 10;
+     height: 50vh;
+  }
+  .nav{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    color :black;
   }
   .heading{
     text-align: center;
@@ -281,6 +300,16 @@ z-index: 10;
   .courseimg{
     display: none;
   }
+.dropdown{
+display:none;
+}
+
+
+
+
+
+
+
 }
 
 

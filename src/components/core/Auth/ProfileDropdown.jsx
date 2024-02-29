@@ -3,7 +3,7 @@ import { AiOutlineCaretDown } from "react-icons/ai"
 import { VscDashboard, VscSignOut } from "react-icons/vsc"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
-
+import { IoSettings } from "react-icons/io5";
 import useOnClickOutside from "../../../hooks/useOnClickOutside"
 import { logout } from "../../../services/operations/authAPI"
 
@@ -13,20 +13,28 @@ export default function ProfileDropdown() {
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const ref = useRef(null)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+  
   useOnClickOutside(ref, () => setOpen(false))
 
   if (!user) return null
 
+ 
+  
   return (
     <button className="relative" onClick={() => setOpen(true)}>
-      <div className="flex items-center gap-x-1">
+
+      <div className="flex items-center  flex-wrap gap-x-1">
+    
         <img
           src={user?.image}
           alt={`profile-${user?.firstName}`}
           className="aspect-square w-[30px] rounded-full object-cover"
         />
-        <AiOutlineCaretDown className="text-sm text-richblack-100" />
+          <p className="sm:hidden text-white">{user?.firstName}</p>
+        {/* <AiOutlineCaretDown className="text-sm text-richblack-100" /> */}
+        <IoSettings className="text-white text-2xl"/>
       </div>
       {open && (
         <div
