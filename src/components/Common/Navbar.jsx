@@ -130,7 +130,7 @@ function Navbar() {
           </ul>
         </nav>
         {/* Login / Signup / Dashboard */}
-        <div className="hidden items-center gap-x-4 md:flex border-2 border-white">
+        <div className="hidden items-center gap-x-4 md:flex ">
           {user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
             <Link to="/dashboard/cart" className="relative">
               <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
@@ -161,7 +161,7 @@ function Navbar() {
 
 
  {flag&&
-        <div className="flex w-7/12 max-w-maxContent items-center justify-between border-2 border-white  navBar">
+        <div className="flex w-7/12 max-w-maxContent items-center justify-between border-2   navBar">
 
         
 {/* <nav className="md:block border-2 border-white"> */}
@@ -240,15 +240,15 @@ function Navbar() {
     </Link>
   )}
   {token === null && (
-    <Link to="/login">
-      <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
+    <Link to="/login" onClick={closeSideBar}>
+      <button className="rounded-[8px] border border-richblack-700 sm:bg-richblack-800 px-[12px] py-[8px] text-white sm:text-richblack-100">
         Login
       </button>
     </Link>
   )}
   {token === null && (
-    <Link to="/signup">
-      <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
+    <Link to="/signup" onClick={closeSideBar}>
+      <button className="rounded-[8px] border border-richblack-700 sm:bg-richblack-800 px-[12px] py-[8px] text-white sm:text-richblack-100">
         Signup
       </button>
     </Link>
@@ -257,14 +257,14 @@ function Navbar() {
 </div>
 </div>
   }
-       {!flag && <button className="mr-4 md:hidden absolute right-10 z-10" onClick={openMenubar}>
+       {!flag && <button className="mr-4 md:hidden absolute right-10 z-50" onClick={openMenubar}>
        
         
           <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
         </button>
        }
        {
-        flag && <button className="mr-4 md:hidden absolute right-10 z-10 " onClick={closeSideBar}>
+        flag && <button className="mr-4 md:hidden absolute right-10   z-50 " onClick={closeSideBar}>
                 
         <CgClose fontSize={24}  className="text-white"/>
 </button>

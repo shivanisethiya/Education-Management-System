@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-
+import { Link } from "react-router-dom"
 import RenderCartCourses from "./RenderCartCourses"
 import RenderTotalAmount from "./RenderTotalAmount"
 
@@ -28,6 +28,10 @@ export default function Cart() {
       ) : (
         <p className="mt-14 text-center text-3xl text-richblack-100">
           Your cart is empty
+<div className="flex justify-center">
+
+         <Link to="/" className="flex items-center justify-center mt-10 w-3/5 border border-yellow-50 bg-yellow-50 text-black" >Back</Link>
+</div>
         </p>
       )}
     </>

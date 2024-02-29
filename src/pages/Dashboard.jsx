@@ -9,7 +9,7 @@ function Dashboard() {
   const { loading: profileLoading } = useSelector((state) => state.profile)
   const { loading: authLoading } = useSelector((state) => state.auth)
 
-  const [flag, setFlag] = useState(true);
+  const [flag, setFlag] = useState(false);
 
   function openSidebar()
   {
@@ -27,9 +27,9 @@ function closeSideBar(){
   }
 
   return (
-    <div className="relative flex min-h-[calc(100vh-3.5rem)]" >
+    <div className="relative flex min-h-[calc(100vh-3.5rem)] " >
         {flag && <MdOutlineKeyboardDoubleArrowLeft className=" cursor-pointer absolute z-20 left-1 top-[-1] sm:text-[#ffd60a] text-3xl sm:text-5xl " onClick={closeSideBar} />} 
-        {!flag && <MdOutlineKeyboardDoubleArrowRight className="text-[#ffd60a] cursor-pointer absolute z-20 left-2 text-5xl" onClick={openSidebar} />}
+        {!flag && <p className="text-[#ffd60a] cursor-pointer absolute z-20 left-0 text-5xl" onClick={openSidebar} ><MdOutlineKeyboardDoubleArrowRight  /></p>}
          {flag &&     <Sidebar  /> }
   
       <div className="h-[calc(100vh-3.5rem)] flex-1 overflow-auto"onClick={closeSideBar}>

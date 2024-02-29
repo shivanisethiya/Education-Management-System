@@ -47,7 +47,7 @@ function closeSideBar(){
   return (
     <>
       <div className="relative flex min-h-[calc(100vh-3.5rem)]">
-      {flag && <MdKeyboardDoubleArrowLeft    className=" cursor-pointer absolute z-20 top-2 text-white text-5xl" onClick={closeSideBar} />} 
+      {flag && <MdKeyboardDoubleArrowLeft    className=" cursor-pointer absolute z-21 text-white text-5xl" onClick={closeSideBar} />} 
       {!flag && <MdKeyboardDoubleArrowRight className="text-white cursor-pointer absolute z-20 left-2 text-5xl" onClick={openSidebar} />}
       {flag &&     <VideoDetailsSidebar setReviewModal={setReviewModal} /> } 
         <div className="h-[calc(100vh-3.5rem)] flex-1 overflow-auto">
