@@ -54,7 +54,7 @@ function Navbar() {
           <img src={logo} alt="Logo" width={160} height={32} loading="lazy" />
         </Link>
         {/* Navigation links */}
-        <div className="flex w-7/12 max-w-maxContent items-center justify-between flex-wrap-reverse navBar">
+        <div className="flex w-7/12 max-w-maxContent items-center justify-between  navBar">
 
         
         <nav className="md:block">

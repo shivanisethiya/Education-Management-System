@@ -10,6 +10,7 @@ body {
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
+  box-sizing: border-box;
   scrollbar-width: auto;
   scrollbar-color: #afb2bf;
 }
@@ -269,7 +270,7 @@ z-index: 10;
    
     background-color: rgb(202, 196, 196);
   }
-  .navBar{
+   .navBar{
      gap: 5px;
      font-size: small;
   }

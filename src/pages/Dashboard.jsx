@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { Outlet } from "react-router-dom"
-import { CgMenuGridR } from "react-icons/cg";
-import { ImCross } from "react-icons/im";
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 import Sidebar from "../components/core/Dashboard/Sidebar"
 import { useState } from "react";
 
@@ -9,7 +9,7 @@ function Dashboard() {
   const { loading: profileLoading } = useSelector((state) => state.profile)
   const { loading: authLoading } = useSelector((state) => state.auth)
 
-  const [flag, setFlag] = useState(false);
+  const [flag, setFlag] = useState(true);
 
   function openSidebar()
   {
@@ -28,8 +28,8 @@ function closeSideBar(){
 
   return (
     <div className="relative flex min-h-[calc(100vh-3.5rem)]" >
-        {flag && <ImCross   className=" cursor-pointer absolute z-20 left-2 top-2 sm:text-white" onClick={closeSideBar} />} 
-        {!flag && <CgMenuGridR className="text-white cursor-pointer absolute z-20 left-2 text-3xl" onClick={openSidebar} />}
+        {flag && <MdOutlineKeyboardDoubleArrowLeft className=" cursor-pointer absolute z-20 left-1 top-[-1] sm:text-[#ffd60a] text-3xl sm:text-5xl " onClick={closeSideBar} />} 
+        {!flag && <MdOutlineKeyboardDoubleArrowRight className="text-[#ffd60a] cursor-pointer absolute z-20 left-2 text-5xl" onClick={openSidebar} />}
          {flag &&     <Sidebar  /> }
   
       <div className="h-[calc(100vh-3.5rem)] flex-1 overflow-auto"onClick={closeSideBar}>
