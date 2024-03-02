@@ -5,7 +5,7 @@
 <hr>
 
 <div align="center">
-  <img src="https://github.com/shivanisethiya/Education-Management-System/assets/105165875/c52273e8-7647-43c0-a5e0-e74be0924aeb"/>
+  <img src="https://github.com/shivanisethiya/Education-Management-System/blob/main/src/assets/Images/HomePage.png"/>
 </div>
 
 <hr>
