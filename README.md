@@ -141,7 +141,7 @@ npm run dev
 <div align="center">
   
 
-<img src="https://github.com/shivanisethiya/Education-Management-System/blob/main/src/assets/Images/Working.png" height="500px" >
+<img src="https://github.com/shivanisethiya/Education-Management-System/blob/main/src/assets/Images/Working.png"  >
 </div>
 
 <hr>
